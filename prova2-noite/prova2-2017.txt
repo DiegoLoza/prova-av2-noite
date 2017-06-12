@@ -1,0 +1,62 @@
+Unilasalle-RJ - AV2
+Aluno: Diego Loza Reis da Silva
+Prova Av2 de Laboratorio de Sistemas Operacionais
+Professor: Alex Salgado
+1o. Semestre de 2017   Turno: Manha
+--------------------------------------------------
+1-Faça um script shell que receba um nome de arquivo como parametro e 
+responde se este arquivo existe ou não.
+
+#!/bin/bash
+
+echo "Digite o nome do arquivo:"
+read arquivo
+
+test -d $arquivo && echo "$arquivo é um diretório." && exit 0
+
+test -f $arquivo && echo "$arquivo é um arquivo." && exit 0
+
+echo "$arquivo não existe."
+
+
+
+2-Reescreva o codigo abaixo usando a estrutura for.
+#!/bin/bash
+cont=$1
+fat=1
+while [ $cont -gt 0 ] 
+do
+   fat=$(( $fat * $cont ))
+   cont=$(( $cont - 1 ))
+done
+echo $fat
+
+
+
+3-Usando estrutura de repetição, faça um script para exibir todos os arquivos
+da pasta atual com tamanho = 0kb (vazio).
+
+#!/bin/bash
+for j in $(ls ~)
+do
+    find . find . -size 0k
+done
+
+
+
+4-Usando estrutura de repetição, faça um script para ler a PASTA ATUAL, calcular e exibir:
+- O total de arquivos lidos
+- O total de arquivos com a extensão .txt 
+- O total de arquivos com a extensão .c
+- O total de arquivos com a extensão .py
+
+
+!/bin/s DIR="$1"
+
+for j in $(ls ~)
+do
+    echo "$j"
+    conta=$conta+1
+    echo $conta
+done
+
